@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : package + classname -->
+<mapper namespace="com.ssafy.happyhouse.model.repo.MemberRepo">
+ 
+    <!-- Product select(String prodId); -->
+    <select id="select" parameterType="String" resultType="Member">
+        select *
+        from ssafy_member
+        where id = #{id}
+    </select>
+ 
+    <!-- insert int 개수를 반환해줘야함 .-->
+    <insert id="insert" parameterType="Member" >
+        insert into ssafy_member 
+        values (#{id},#{passwd},#{name},#{email})
+    </insert>
+    
+    
+    <!-- update int 개수를 반환해줘야함 . -->
+    <update id="update" parameterType="string">
+    	update ssafy_member 
+    	set passwd = #{passwd}, name = #{name} , email = #{email}
+    	where id = #{id}
+    </update>
+    
+    <!-- delete int 개수를 반환해줘야함 . -->
+    <delete id="delete" parameterType="String">
+        delete from ssafy_member
+        where id = #{id}
+    </delete>
+    
+    <!-- login  -->
+    <select id="login" parameterType="map" resultType="Member">
+        select *
+        from ssafy_member
+        where id = #{id} and passwd = #{passwd}
+    </select>
+    
+</mapper>

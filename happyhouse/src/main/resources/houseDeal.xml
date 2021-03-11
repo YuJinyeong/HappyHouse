@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.webex.model.repo.HouseDealRepository">
+	
+	<select id="searchAll" parameterType="map" resultType="HouseDealDto">
+		select no,dong,AptName,code,dealAmount,buildYear,dealYear,dealMonth,dealDay,area,floor,jibun
+		from housedeal
+		order by no asc
+		limit #{start}, #{spp}
+	</select>
+	
+	<select id="searchAptName" parameterType="map" resultType="HouseDealDto">
+		select no,dong,AptName,code,dealAmount,buildYear,dealYear,dealMonth,dealDay,area,floor,jibun
+		from housedeal
+		where aptName like #{aptName}
+		order by no asc
+		limit #{start}, #{spp}
+	</select>
+	
+	<select id="searchDongName" parameterType="map" resultType="HouseDealDto">
+		select no,dong,AptName,code,dealAmount,buildYear,dealYear,dealMonth,dealDay,area,floor,jibun
+		from housedeal
+		where dong like #{dongName}
+		order by no asc
+		limit #{start}, #{spp}
+	</select>
+	
+	<select id="show" parameterType="int" resultType="HouseDealDto">
+		select no,dong,AptName,code,dealAmount,buildYear,dealYear,dealMonth,dealDay,area,floor,jibun
+		from housedeal
+		where no like #{no}
+		order by no asc
+	</select>
+	
+	<select id="getTotalCount" parameterType="map" resultType="int">
+		select count(no)
+		from housedeal
+		<if test="word != null and word != ''">
+			<if test="key == 'subject'">
+				where subject like concat('%', #{word}, '%')
+			</if>
+			<if test="key != 'subject'">
+				where #{key} = #{word}
+			</if>
+		</if>
+	</select>
+</mapper>

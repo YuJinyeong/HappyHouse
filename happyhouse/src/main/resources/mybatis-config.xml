@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 사용하려는 DTO에 대한 축약 이름 -->
+	<typeAliases>
+		<typeAlias type="com.ssafy.happyhouse.model.dto.Member" alias="member" />
+		<typeAlias type="com.ssafy.happyhouse.model.dto.HouseBuyDto" alias="HouseBuyDto" />
+		<typeAlias type="com.ssafy.happyhouse.model.dto.HouseInfoDto" alias="HouseInfoDto" />
+		<typeAlias type="com.ssafy.happyhouse.model.dto.HouseDealDto" alias="HouseDealDto" />
+		<typeAlias type="com.ssafy.happyhouse.model.dto.SidoGugunCodeDto" alias="SidoGugunCodeDto" />
+	</typeAliases>
+
+	<!-- 사용할 쿼리에 대한 등록 -->
+	<mappers>
+		<mapper resource="member.xml" />
+		<mapper resource="houseDeal.xml" />
+		<mapper resource="houseMap.xml" />
+	</mappers>
+
+</configuration>

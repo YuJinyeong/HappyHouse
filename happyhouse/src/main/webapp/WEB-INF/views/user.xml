@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<users>
+	<user>
+		<ID>root</ID>
+		<PW>root</PW>
+		<NAME>123</NAME>
+		<PHONE>123</PHONE>
+		<EMAIL>123</EMAIL>
+		<ADDRESS>123</ADDRESS>
+	</user>
+	<user>
+		<ID>456</ID>
+		<PW>456</PW>
+		<NAME>456</NAME>
+		<PHONE>456</PHONE>
+		<EMAIL>456</EMAIL>
+		<ADDRESS>456</ADDRESS>
+	</user>
+	<user>
+		<ID>789</ID>
+		<PW>789</PW>
+		<NAME>789</NAME>
+		<PHONE>789</PHONE>
+		<EMAIL>789</EMAIL>
+		<ADDRESS>789</ADDRESS>
+	</user>
+</users>
+
+
